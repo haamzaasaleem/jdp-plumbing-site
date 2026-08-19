@@ -52,36 +52,79 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  /* ---------- before/after comparison slider ---------- */
-  var baRange = document.getElementById('baRange');
-  var baBeforeWrap = document.getElementById('baBeforeWrap');
-  var baHandle = document.getElementById('baHandle');
-  var baBeforeImg = document.getElementById('baBeforeImg');
-  var baAfterImg = document.getElementById('baAfterImg');
-  var baTabs = document.querySelectorAll('.ba-tab');
+  /* ---------- project gallery filters ---------- */
+  var filters = document.querySelectorAll('.proj-filter');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.proj-item'));
+  var emptyMsg = document.getElementById('projEmpty');
 
-  function setBaPosition(val) {
-    baBeforeWrap.style.clipPath = 'inset(0 ' + (100 - val) + '% 0 0)';
-    baHandle.style.left = val + '%';
-  }
-
-  if (baRange && baBeforeWrap && baHandle) {
-    setBaPosition(baRange.value);
-    baRange.addEventListener('input', function () {
-      setBaPosition(this.value);
+  if (filters.length && items.length) {
+    filters.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filters.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var cat = btn.getAttribute('data-filter');
+        var shown = 0;
+        items.forEach(function (item) {
+          var cats = item.getAttribute('data-cat') || '';
+          var match = (cat === 'all') || cats.indexOf(cat) !== -1;
+          item.classList.toggle('hide', !match);
+          if (match) shown++;
+        });
+        if (emptyMsg) emptyMsg.classList.toggle('show', shown === 0);
+      });
     });
   }
 
-  if (baTabs.length && baBeforeImg && baAfterImg) {
-    baTabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        baTabs.forEach(function (t) { t.classList.remove('active'); });
-        tab.classList.add('active');
-        baBeforeImg.src = tab.getAttribute('data-before');
-        baAfterImg.src = tab.getAttribute('data-after');
-        baRange.value = 50;
-        setBaPosition(50);
+  /* ---------- lightbox ---------- */
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCaption = document.getElementById('lbCaption');
+  var lbClose = document.getElementById('lbClose');
+  var lbPrev = document.getElementById('lbPrev');
+  var lbNext = document.getElementById('lbNext');
+  var currentIndex = 0;
+
+  function visibleItems() {
+    return items.filter(function (it) { return !it.classList.contains('hide'); });
+  }
+  function showLightbox(index) {
+    var vis = visibleItems();
+    if (!vis.length) return;
+    if (index < 0) index = vis.length - 1;
+    if (index >= vis.length) index = 0;
+    currentIndex = index;
+    var item = vis[index];
+    lbImg.src = item.getAttribute('data-full');
+    lbImg.alt = item.getAttribute('data-caption') || '';
+    lbCaption.textContent = item.getAttribute('data-caption') || '';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('nav-locked');
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('nav-locked');
+  }
+
+  if (lightbox && items.length) {
+    items.forEach(function (item) {
+      item.addEventListener('click', function () {
+        var vis = visibleItems();
+        showLightbox(vis.indexOf(item));
       });
+    });
+    if (lbClose) lbClose.addEventListener('click', closeLightbox);
+    if (lbPrev) lbPrev.addEventListener('click', function () { showLightbox(currentIndex - 1); });
+    if (lbNext) lbNext.addEventListener('click', function () { showLightbox(currentIndex + 1); });
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showLightbox(currentIndex - 1);
+      if (e.key === 'ArrowRight') showLightbox(currentIndex + 1);
     });
   }
 

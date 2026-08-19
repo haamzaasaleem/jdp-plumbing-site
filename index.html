@@ -40,18 +40,18 @@
       <a href="services.html">Services</a>
       <a href="contact.html">Contact</a>
       <div class="nav-mobile-cta">
-        <a href="tel:5595550148" class="nav-mobile-phone">
+        <a href="tel:5595074676" class="nav-mobile-phone">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          (559) 555-0148
+          (559) 507-4676
         </a>
         <a href="contact.html" class="btn btn-orange" style="justify-content:center;">Request a Bid</a>
       </div>
     </nav>
     <div class="nav-right">
-      <a href="tel:5595550148" class="nav-phone">
+      <a href="tel:5595074676" class="nav-phone">
         <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
         <span>
-          <span class="num">(559) 555-0148</span><br>
+          <span class="num">(559) 507-4676</span><br>
           <span class="lbl">Call for a bid</span>
         </span>
       </a>
@@ -136,30 +136,81 @@
 <section class="bg-alt" id="showcase">
   <div class="wrap">
     <div class="section-head">
-      <span class="tag">Drag To Compare</span>
-      <h2>Rough-in to finished</h2>
-      <p class="lede" style="margin:0 auto;">Real photos from JDP job sites — drag the slider to see the work from open wall to final fixture.</p>
+      <span class="tag">Our Work</span>
+      <h2>From the job site</h2>
+      <p class="lede" style="margin:0 auto;">Real photos from JDP projects across the Valley — filter by type, tap any photo to view it full size.</p>
     </div>
-    <div class="showcase-grid">
 
-      <div class="ba-card reveal">
-        <div class="ba-tabs">
-          <button type="button" class="ba-tab active" data-before="images/gallery/rough-in-wall-vanity.jpg" data-after="images/gallery/pedestal-sink-finish.jpg">Vanity Plumbing</button>
-          <button type="button" class="ba-tab" data-before="images/gallery/shower-valve-roughin.jpg" data-after="images/gallery/tub-shower-surround.jpg">Shower Plumbing</button>
-        </div>
-        <div class="ba-slider">
-          <div class="ba-after-wrap"><img id="baAfterImg" src="images/gallery/pedestal-sink-finish.jpg" alt="Finished plumbing fixture"></div>
-          <div class="ba-before-wrap" id="baBeforeWrap"><img id="baBeforeImg" src="images/gallery/rough-in-wall-vanity.jpg" alt="Rough-in plumbing before finish"></div>
-          <span class="ba-label ba-label-left">Rough-In</span>
-          <span class="ba-label ba-label-right">Finished</span>
-          <div class="ba-handle" id="baHandle">
-            <div class="grip">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
-            </div>
-          </div>
-          <input type="range" id="baRange" class="ba-range" min="0" max="100" value="50" aria-label="Drag to compare rough-in and finished photos">
-        </div>
-        <p class="disclaimer">Representative photos from JDP residential projects.</p>
+    <div class="proj-filters reveal" id="projFilters">
+      <button type="button" class="proj-filter active" data-filter="all">All</button>
+      <button type="button" class="proj-filter" data-filter="residential">Residential</button>
+      <button type="button" class="proj-filter" data-filter="commercial">Commercial</button>
+      <button type="button" class="proj-filter" data-filter="roughin">Rough-In</button>
+      <button type="button" class="proj-filter" data-filter="finish">Finish</button>
+    </div>
+
+    <div class="proj-grid" id="projGrid">
+      <button type="button" class="proj-item reveal" data-cat="residential roughin" data-full="images/gallery/insulated-room-roughin.jpg" data-caption="Insulated room rough-in — residential new construction">
+        <img src="images/gallery/insulated-room-roughin.jpg" alt="Insulated room with plumbing and gas rough-in" loading="lazy">
+        <span class="cap">Room rough-in</span>
+      </button>
+      <button type="button" class="proj-item reveal" data-cat="residential roughin" data-full="images/gallery/wall-roughin-manifold.jpg" data-caption="Wall rough-in with PEX manifold and gas line">
+        <img src="images/gallery/wall-roughin-manifold.jpg" alt="Interior wall rough-in with PEX manifold and black gas line" loading="lazy">
+        <span class="cap">PEX manifold</span>
+      </button>
+      <button type="button" class="proj-item reveal" data-cat="residential roughin" data-full="images/gallery/trench-rv-side.jpg" data-caption="Water and sewer trench alongside the structure">
+        <img src="images/gallery/trench-rv-side.jpg" alt="Water line trench dug alongside a structure" loading="lazy">
+        <span class="cap">Utility trench</span>
+      </button>
+      <button type="button" class="proj-item reveal" data-cat="residential roughin" data-full="images/gallery/trench-tee-fitting.jpg" data-caption="Underground tee fitting set in the trench">
+        <img src="images/gallery/trench-tee-fitting.jpg" alt="Black tee fitting and green pipe set in a trench" loading="lazy">
+        <span class="cap">Underground tee</span>
+      </button>
+      <button type="button" class="proj-item reveal" data-cat="residential roughin" data-full="images/gallery/shower-valve-roughin.jpg" data-caption="Shower valve rough-in before wall cover">
+        <img src="images/gallery/shower-valve-roughin.jpg" alt="Shower valve rough-in" loading="lazy">
+        <span class="cap">Shower valve</span>
+      </button>
+      <button type="button" class="proj-item reveal" data-cat="residential finish" data-full="images/gallery/soaking-tub-finish.jpg" data-caption="Freestanding soaking tub — finished install">
+        <img src="images/gallery/soaking-tub-finish.jpg" alt="Freestanding soaking tub installed" loading="lazy">
+        <span class="cap">Soaking tub</span>
+      </button>
+      <button type="button" class="proj-item reveal" data-cat="residential finish" data-full="images/gallery/tub-shower-surround.jpg" data-caption="Tub and shower surround — finished">
+        <img src="images/gallery/tub-shower-surround.jpg" alt="New tub and shower surround installed" loading="lazy">
+        <span class="cap">Tub &amp; surround</span>
+      </button>
+      <button type="button" class="proj-item reveal" data-cat="residential finish" data-full="images/gallery/pedestal-sink-finish.jpg" data-caption="Wall-mounted bathroom sink — finished">
+        <img src="images/gallery/pedestal-sink-finish.jpg" alt="Wall-mounted bathroom sink installed" loading="lazy">
+        <span class="cap">Bathroom sink</span>
+      </button>
+      <button type="button" class="proj-item reveal" data-cat="residential finish" data-full="images/gallery/water-heater-install.jpg" data-caption="Water heater install — finished">
+        <img src="images/gallery/water-heater-install.jpg" alt="Water heater installed" loading="lazy">
+        <span class="cap">Water heater</span>
+      </button>
+      <button type="button" class="proj-item reveal" data-cat="residential finish" data-full="images/gallery/toilet-install.jpg" data-caption="Toilet set — finish stage">
+        <img src="images/gallery/toilet-install.jpg" alt="Toilet installed" loading="lazy">
+        <span class="cap">Fixture set</span>
+      </button>
+      <button type="button" class="proj-item reveal" data-cat="residential finish" data-full="images/gallery/disposal-install.jpg" data-caption="Garbage disposal and under-sink plumbing">
+        <img src="images/gallery/disposal-install.jpg" alt="Garbage disposal and under-sink plumbing installed" loading="lazy">
+        <span class="cap">Under-sink</span>
+      </button>
+      <button type="button" class="proj-item reveal" data-cat="residential roughin" data-full="images/gallery/trench-water-line.jpg" data-caption="Water line trenched and laid to the structure">
+        <img src="images/gallery/trench-water-line.jpg" alt="Water line trenched and laid" loading="lazy">
+        <span class="cap">Water line</span>
+      </button>
+      <p class="proj-empty" id="projEmpty">No photos in this category yet — check back soon.</p>
+    </div>
+
+    <div class="showcase-grid showcase-cta">
+
+      <div class="showcase-pitch reveal">
+        <span class="tag">Bidding a build?</span>
+        <h3>Like what you see? Let's talk scope.</h3>
+        <p class="lede">Every photo above is a JDP job. Send us your plan set and we'll turn around a rough-in bid built to your schedule — residential tract or commercial TI.</p>
+        <a href="tel:5595074676" class="showcase-phone">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (559) 507-4676
+        </a>
       </div>
 
       <div class="quick-form reveal">
@@ -251,9 +302,9 @@
       <p>Send us the plan set — we'll turn a rough-in bid around fast. Financing options available for qualifying projects.</p>
     </div>
     <div style="display:flex; align-items:center; gap:22px; flex-wrap:wrap;">
-      <a href="tel:5595550148" class="cta-phone">
+      <a href="tel:5595074676" class="cta-phone">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        (559) 555-0148
+        (559) 507-4676
       </a>
       <a href="contact.html" class="btn btn-white">Request a Bid</a>
     </div>
@@ -292,9 +343,9 @@
     <div>
       <h4>Contact</h4>
       <ul>
-        <li>(559) 555-0148</li>
+        <li>(559) 507-4676</li>
         <li>bids@jdpplumbing.com</li>
-        <li>PO Box 214, Madera, CA</li>
+        <li>P.O. Box 262, Madera, CA</li>
         <li>CSLB #1082456 — C-36</li>
       </ul>
     </div>
@@ -304,6 +355,22 @@
     <span>New construction only — no service calls</span>
   </div>
 </footer>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Close">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous photo">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <figure class="lb-figure">
+    <img id="lbImg" src="" alt="">
+    <figcaption id="lbCaption"></figcaption>
+  </figure>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next photo">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+</div>
 
 <script src="script.js"></script>
 </body>
